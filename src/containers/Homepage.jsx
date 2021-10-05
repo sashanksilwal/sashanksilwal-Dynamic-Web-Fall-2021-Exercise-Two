@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import WeatherCard from "../components/WeatherCard";
+import { API_KEY } from "../components/API_KEY";
 
 // abstarct away url search params here to make it easier to use
 function useQuery() {
@@ -16,7 +17,6 @@ function HomePage() {
 
   let query = useQuery();
 
-  const API_KEY = "41c5e5cc45a2ad0060d4373aea5b1549";
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`;
 
   useEffect(() => {
@@ -51,8 +51,8 @@ function HomePage() {
     if (!weatherData) return {};
     return {
       cloudiness: weatherData.clouds.all,
-      currentTemp: weatherData.main.temp,
-      highTemp: weatherData.main.temp_max,
+      currentTemp: Math.round(weatherData.main.temp),
+      highTemp: Math.round(weatherData.main.temp_max),
       humidity: weatherData.main.humidity,
       lowTemp: weatherData.main.temp_min,
       weatherType: weatherData.weather[0].main,
@@ -62,20 +62,37 @@ function HomePage() {
 
   return (
     <main>
-      <header className="header">
-        <p>
-          <a href="/?city=Paris">Paris</a>
-        </p>
+      <header>
+        <nav className="Navigation">
+          <a
+            href="/?city=California"
+            className={city === "California" && "Active"}
+          >
+            California
+          </a>
 
-        <p>
-          <a href="/?city=Tokyo">Tokyo</a>
-        </p>
+          <a
+            href="/?city=Kathmandu"
+            className={city === "Kathmandu" && "Active"}
+          >
+            Kathmandu
+          </a>
+          <a
+            href="/?city=New%20York"
+            className={city === "New York" && "Active"}
+          >
+            New York
+          </a>
+          <a href="/?city=Paris" className={city === "Paris" && "Active"}>
+            Paris
+          </a>
 
-        <input type="text"></input>
-        <button>
-          <a href="/?city=Tokyo">Tokyo</a>
-        </button>
+          <a href="/?city=Tokyo" className={city === "Tokyo" && "Active"}>
+            Tokyo
+          </a>
+        </nav>
       </header>
+      <p className="City">{city}</p>
       <WeatherCard
         cloudiness={cloudiness}
         currentTemp={currentTemp}
