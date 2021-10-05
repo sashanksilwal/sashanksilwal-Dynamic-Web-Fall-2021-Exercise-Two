@@ -11,36 +11,41 @@ function WeatherCard({
 }) {
   return (
     <section className="WeatherCard">
-      <div className="CardSection">
-        <div className="ImageWeatherWrapper">
-          <WeatherImage weatherType={weatherType} />
+      <div className="CardSectionWrapper">
+        <div className="row">
+          <div className="column">
+            <div className="ImageWeatherWrapper">
+              <WeatherImage weatherType={weatherType} />
+            </div>
+
+            <p className="currentTemp">
+              Current Temp{" "}
+              <strong className="currentTempText">{currentTemp}°</strong>
+            </p>
+          </div>
+
+          <div className="column">
+            <p className="data cloudiness">
+              Cloudiness: <strong>{cloudiness}</strong>
+            </p>
+            <p className=" data humidity">
+              Humidity: <strong>{humidity}</strong>
+            </p>
+            <p className=" data highTemp">
+              HighTemp: <strong>{highTemp}</strong>
+            </p>
+
+            <p className=" data lowTemp">
+              LowTemp: <strong>{lowTemp}</strong>
+            </p>
+            <p className="data weatherType">
+              WeatherType: <strong>{weatherType}</strong>
+            </p>
+            <p className="data windSpeed">
+              WindSpeed: <strong>{windSpeed}</strong>
+            </p>
+          </div>
         </div>
-
-        <p className="currentTemp">
-          Current Temp: <strong>{currentTemp}°</strong>
-        </p>
-      </div>
-
-      <div className="CardSection">
-        <p className="cloudiness">
-          Cloudiness: <strong>{cloudiness}</strong>
-        </p>
-
-        <p className="highTemp">
-          HighTemp: <strong>{highTemp}</strong>
-        </p>
-        <p className="humidity">
-          Humidity: <strong>{humidity}</strong>
-        </p>
-        <p className="lowTemp">
-          LowTemp: <strong>{lowTemp}</strong>
-        </p>
-        <p className="weatherType">
-          WeatherType: <strong>{weatherType}</strong>
-        </p>
-        <p className="windSpeed">
-          WindSpeed: <strong>{windSpeed}</strong>
-        </p>
       </div>
     </section>
   );

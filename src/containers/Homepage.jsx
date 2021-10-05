@@ -30,7 +30,6 @@ function HomePage() {
         .get(URL)
         .then(function (response) {
           setWeatherData(response.data);
-          console.log(response);
         })
         .catch(function (error) {
           console.warn(error);
@@ -47,14 +46,13 @@ function HomePage() {
     weatherType,
     windSpeed,
   } = useMemo(() => {
-    console.log(weatherData);
     if (!weatherData) return {};
     return {
       cloudiness: weatherData.clouds.all,
       currentTemp: Math.round(weatherData.main.temp),
       highTemp: Math.round(weatherData.main.temp_max),
       humidity: weatherData.main.humidity,
-      lowTemp: weatherData.main.temp_min,
+      lowTemp: Math.round(weatherData.main.temp_min),
       weatherType: weatherData.weather[0].main,
       windSpeed: weatherData.wind.speed,
     };
@@ -66,28 +64,30 @@ function HomePage() {
         <nav className="Navigation">
           <a
             href="/?city=California"
-            className={city === "California" && "Active"}
+            className={city === "California" ? "Active" : ""}
           >
             California
           </a>
 
           <a
             href="/?city=Kathmandu"
-            className={city === "Kathmandu" && "Active"}
+            className={city === "Kathmandu" ? "Active" : ""}
           >
             Kathmandu
           </a>
           <a
             href="/?city=New%20York"
-            className={city === "New York" && "Active"}
+            className={city === "New York" ? "Active" : ""}
           >
             New York
           </a>
-          <a href="/?city=Paris" className={city === "Paris" && "Active"}>
+          <a href="/?city=Paris" className={city === "Paris" ? "Active" : ""}>
             Paris
           </a>
-
-          <a href="/?city=Tokyo" className={city === "Tokyo" && "Active"}>
+          <a href="/?city=Rio" className={city === "Rio" ? "Active" : ""}>
+            Rio
+          </a>
+          <a href="/?city=Tokyo" className={city === "Tokyo" ? "Active" : ""}>
             Tokyo
           </a>
         </nav>

@@ -1,31 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
-  max-width: 1080px;
+  max-width: 100%;
 
   padding: 0 25px;
 }
 .backgound-design {
   margin: 0;
-  /* background-color: #a8d8ea; */
-}
-/* .root {
-  height: 100%;
+  height: 100vh;
   background-color: #a8d8ea;
-} */
+}
+
+.City {
+  font-weight: bolder;
+  font-size: 6em;
+  margin: 0;
+  text-align: center;
+}
+
+.City:hover {
+  color: rgba(68, 3, 3, 0.671);
+}
+
+.currentTemp {
+  font-size: 40px;
+  margin: auto 20px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+.currentTempText {
+  font-size: 40px;
+  display: block;
+  text-align: center;
+}
+.CardSection {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.data {
+  margin: 10px 10px auto;
+}
+
+.data strong {
+  font-family: "Courier New", Courier, monospace;
+}
 .header {
   font-size: 3em;
   text-align: center;
-}
-.WeatherCard {
-  border: 1px solid black;
-  border-radius: 8px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding: 10px;
-  width: 50%;
-  background-color: #aa96da;
-}
-.WeatherCard p {
-  margin-right: 10px;
 }
 
 .ImageWeatherWrapper {
@@ -51,22 +81,23 @@
   border-bottom: 2px solid black;
 }
 
-.City {
-  font-weight: bolder;
-  font-size: 100px;
-  margin: 0;
-  text-align: center;
-}
-
-.City:hover {
-  color: rgba(68, 3, 3, 0.671);
-}
-
-.currentTemp {
-  font-size: 40px;
-  margin: auto auto auto 80px;
-}
-
-.CardSection {
+.row {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.WeatherCard {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px;
+  width: 50%;
+  background-color: #aa96da;
+}
+
+.WeatherCard p {
+  margin-right: 10px;
 }
