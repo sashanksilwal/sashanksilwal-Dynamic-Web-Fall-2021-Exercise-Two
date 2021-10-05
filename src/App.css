@@ -61,3 +61,12 @@
 .City:hover {
   color: rgba(68, 3, 3, 0.671);
 }
+
+.currentTemp {
+  font-size: 40px;
+  margin: auto auto auto 80px;
+}
+
+.CardSection {
+  display: flex;
+}
