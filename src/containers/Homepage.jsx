@@ -68,7 +68,9 @@ function HomePage() {
           >
             California
           </a>
-
+          <a href="/?city=Dubai" className={city === "Dubai" ? "Active" : ""}>
+            Dubai
+          </a>
           <a
             href="/?city=Kathmandu"
             className={city === "Kathmandu" ? "Active" : ""}

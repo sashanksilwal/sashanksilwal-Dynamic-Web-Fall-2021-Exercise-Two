@@ -10,7 +10,10 @@ function WeatherCard({
   windSpeed,
 }) {
   return (
-    <section className="WeatherCard">
+    <section
+      className="WeatherCard"
+      style={{ backgroundColor: `rgba(130,130,130,${cloudiness / 100})` }}
+    >
       <div className="CardSectionWrapper">
         <div className="row">
           <div className="column">
