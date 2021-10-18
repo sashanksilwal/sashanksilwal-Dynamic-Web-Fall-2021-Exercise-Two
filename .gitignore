@@ -4,6 +4,8 @@
 /src/components/Api_key.js
 # dependencies
 /node_modules
+**/node_modules
+
 /.pnp
 .pnp.js
 

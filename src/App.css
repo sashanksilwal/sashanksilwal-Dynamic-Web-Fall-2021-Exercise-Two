@@ -25,13 +25,13 @@
 }
 
 .currentTemp {
-  font-size: 30px;
+  font-size: 40px;
   margin: auto 20px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
 }
 .currentTempText {
-  font-size: 30px;
+  font-size: 40px;
   display: block;
   text-align: center;
 }
